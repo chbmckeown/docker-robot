@@ -7,7 +7,6 @@ IMAGE_NAME='robot-docker'
 # Example: TEST_PATH='/home/user/tests'
 # This default will use the example /test directory in this repo
 TEST_PATH=$(pwd)
-TEST_PATH='/mnt/Files/www/tests'
 
 docker run -it --security-opt seccomp=$(pwd)/chrome.json --shm-size=1gb  -v $TEST_PATH:/robot $IMAGE_NAME:latest robot --timestampoutputs --outputdir results/ $@ .
 RESULT=$?
